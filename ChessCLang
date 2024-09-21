@@ -1,0 +1,50 @@
+#include <iostream>
+
+class Board {
+public:
+	int board[8][8];
+public:
+	Board(int board[8][8]);
+	void InitialiseBoard(int board[8][8]);
+	bool isCheckMate(int board[8][8]);
+	bool isCheck(int board[8][8]);
+};
+class Cell:public Board {
+public:
+	int x, y;
+	Cell(int x, int y);
+	bool isFree(int x, int y);
+};
+class Figure {
+public: ///хз может private лучше
+	int x, y;
+	enum class type { ROCK, PAWN, QUEEN, KING, KNIGHT };
+	enum class color {WHITE,BLACK};
+public:
+	Figure(int x, int y, type TYPE, color COLOR);
+	bool CanMoveFigure(int newX, int newY);
+	void MoveFigure(int newX, int newY);
+};
+class Knight : public Figure {
+	int dx, dy;
+};
+class Rock : public Figure {
+	int dx, dy;
+};
+class Pawn : public Figure {
+	int dx, dy;
+};
+class Queen : public Figure {
+	int dx, dy;
+};
+class King : public Figure {
+	int dx, dy;
+};
+class Bishop :public Figure {
+	int dx, dy;
+};
+
+
+int main() {
+	///
+}
